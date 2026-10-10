@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Edit Risk of Rain 2 XML saves locally in your browser.">
+    <meta name="theme-color" content="#10191f">
+    <title>RoR2 Save Editor</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d252d'/%3E%3Cpath d='M19 3 8 18h8l-3 11 12-17h-8z' fill='%23c2a46f'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/vendor/brython.js"></script>
+    <script src="/vendor/brython_stdlib.js"></script>
+  </head>
+  <body onload="brython({debug: 0, pythonpath: ['/']})">
+    <a class="skip-link" href="#editor-main">Skip to main content</a>
+    <input id="profile-file" type="file" accept=".xml,application/xml,text/xml" hidden aria-label="Choose an XML profile">
+    <div id="app"><p class="loading-message" role="status">Loading save editor…</p></div>
+    <div id="notice" class="notice" hidden>
+      <div>
+        <p id="notice-message" role="status" aria-live="polite"></p>
+        <p id="error-message" role="alert" aria-live="assertive"></p>
+      </div>
+      <button id="dismiss-notice" class="dismiss-notice" type="button" aria-label="Dismiss notification">×</button>
+    </div>
+    <noscript>This editor needs JavaScript enabled to run Python in your browser.</noscript>
+    <script type="text/python" src="/main.py"></script>
+  </body>
+</html>

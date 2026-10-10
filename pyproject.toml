@@ -1,0 +1,40 @@
+[project]
+name = "risk-of-raine-save-editor"
+version = "0.1.0"
+description = "Risk of Rain 2 save editor"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.15,<3.16"
+dependencies = [
+    "brython==3.15.0",
+]
+
+[project.scripts]
+risk-of-raine-save-editor = "src.app:main"
+
+[build-system]
+requires = ["uv_build>=0.12.22,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "src"
+module-root = ""
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.0",
+]
+
+[tool.ruff]
+target-version = "py315"
+line-length = 100
+src = ["."]
+
+[tool.ruff.lint]
+select = ["ANN", "E4", "E7", "E9", "F", "I"]
+
+[tool.pyright]
+pythonVersion = "3.15"
+stubPath = "typings"
+

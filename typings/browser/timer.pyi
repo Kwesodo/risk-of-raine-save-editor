@@ -1,0 +1,3 @@
+from collections.abc import Callable
+
+def set_timeout(callback: Callable[[], None], delay: int | float) -> int: ...
